@@ -7,13 +7,22 @@
 :root{
     --bg-color: rgb(0, 0, 0);
     --text-color: rgb(255, 255, 255);
-    --border-list: 1px solid white;
+    --bg-color-list: rgba(255, 255, 255, 0.774);   
+    --border-list: 1px solid rgb(255, 255, 255);
+    --box-shaadow: 4px 4px 2px rgb(135, 31, 254);
+
+
+    /*hover*/
+    --border-list-hover: 2px solid rgb(255, 255, 255);
+    --bg-color-list-hover: rgba(135, 31, 254, 0.506);
+    --text-color-hover: rgb(255, 255, 255);
 
 }
 
 .light{
     --bg-color: rgb(217, 217, 217);
     --text-color: rgb(0, 0, 0);
+    --bg-color-list: ;
     --border-list: ;
 }
 
@@ -25,11 +34,17 @@ body{
     width: 100vw;
     height: 100vh;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
 #inicio .logo{
-    margin-top: 20px;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.logo img{
+    width: 400px;
 }
 
 nav{
@@ -39,17 +54,17 @@ nav{
 .list{
     width: 150px;
     padding: 5px;
-    background-color: rgba(255, 255, 255, 0.774);
+    background-color: var(--bg-color-list);
     border-radius: 9px;
     border: var(--border-list);
     text-align: center;
-    box-shadow:4px 4px 2px #871FFE;
+    box-shadow: var(--box-shaadow);
 }
 
 .list:hover{
-    border: 2px solid white;
-    background-color: #871ffe81;
-    color: white;
+    border: var(--border-list-hover);
+    background-color: var(--bg-color-list-hover);
+    color: var(--text-color-hover);
 }
 
 ul{
@@ -62,7 +77,65 @@ a{
     text-decoration: none;
 }
 
+#inicio .frase{
+    margin-top: 20px;
+    
+}
+
+.frase .words{
+    color: var(--text-color);
+    text-align: center;
+    position: absolute;
+    border: 1px solid red;
+}
+
+.frase img{
+    width: 900px;
+}
+
 #sobre{
     width: 100vw;
     height: 100vh;
+}
+
+/*Computadores*/
+@media (min-width: 1024px){
+
+}
+
+/*Tablets*/
+@media (min-width: 768px) and (max-width: 1200px){
+    .list{
+        width: 130px;
+    }
+    .logo{
+        position: absolute;
+        transform: translateY(100%);
+    }
+}
+
+/*Smartphones*/
+@media (max-width: 767px){
+    .navegar ul{
+        background-color: rgb(135, 31, 254);
+        padding: 20px;
+        position: fixed;
+        top: 0;
+        right: 0;  
+        /*Lembrar de transformar isso em um menu sanduiche com js*/     
+    }
+
+    .list{
+        width: 150px;
+        padding: 5px;
+        background-color: var(--bg-color-list);
+        border-radius: 9px;
+        border: var(--border-list);
+        text-align: center;
+        box-shadow: var(--box-shaadow);
+    }
+    .logo{
+        position: absolute;
+        transform: translateY(100%);
+    }
 }
