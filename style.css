@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --bg-color: rgb(0, 0, 0);
+    --text-color: rgb(255, 255, 255);
+    --border-list: 1px solid white;
+
+}
+
+.light{
+    --bg-color: rgb(217, 217, 217);
+    --text-color: rgb(0, 0, 0);
+    --border-list: ;
+}
+
+body{
+    background-color: var(--bg-color);
+}
+
+#inicio{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+#inicio .logo{
+    margin-top: 20px;
+}
+
+nav{
+    margin-top: 60px;
+}
+
+.list{
+    width: 150px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.774);
+    border-radius: 9px;
+    border: var(--border-list);
+    text-align: center;
+    box-shadow:4px 4px 2px #871FFE;
+}
+
+.list:hover{
+    border: 2px solid white;
+    background-color: #871ffe81;
+    color: white;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+a{
+    text-decoration: none;
+}
+
+#sobre{
+    width: 100vw;
+    height: 100vh;
+}
