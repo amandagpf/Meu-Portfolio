@@ -10,12 +10,17 @@
     --bg-color-list: rgba(255, 255, 255, 0.774);   
     --border-list: 1px solid rgb(255, 255, 255);
     --box-shaadow: 4px 4px 2px rgb(135, 31, 254);
+    --bg-header: rgb(135, 31, 254);
+    --bg-menu: rgb(135, 31, 254);
+    --box-shadow-menu: rgb(0, 0, 0);
+    --mode-bg-url: url(./assets/moon-stars.svg);
 
 
     /*hover*/
     --border-list-hover: 2px solid rgb(255, 255, 255);
     --bg-color-list-hover: rgba(135, 31, 254, 0.506);
     --text-color-hover: rgb(255, 255, 255);
+    --bg-color-icon: rgb(135, 31, 254);
 
 }
 
@@ -24,6 +29,7 @@
     --text-color: rgb(0, 0, 0);
     --bg-color-list: ;
     --border-list: ;
+    --mode-bg-url: url(./assets/sun.svg);
 }
 
 body{
@@ -33,21 +39,22 @@ body{
 #inicio{
     width: 100vw;
     height: 100vh;
-    display: flex;
-    flex-wrap: wrap;
     justify-content: center;
 }
 
-#inicio .logo{
-    margin-top: 30px;
-    margin-left: 30px;
+header{
+    width: 100vw;
+    display: flex;
+    height: 100px;
+    justify-content:space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    padding: 0 40px;
 }
 
 .logo img{
-    width: 350px;
-}
-
-#navegar{
+    width: 400px;
     margin-top: 40px;
 }
 
@@ -81,8 +88,6 @@ body{
     color: var(--text-color-hover);
 }
 
-
-
 a{
     text-decoration: none;
 }
@@ -90,6 +95,8 @@ a{
 #inicio .frase{
     display: flex;
     justify-content: center;
+    position: relative;
+    transform: translateY(40%);
     
 }
 
@@ -109,68 +116,237 @@ a{
 
 .frase img{
     margin-top: 0px;
-    width: 600px;
+    width: 700px;
 }
 
 footer{
     width: 100vw;
     display: flex;
     justify-content: center;
+    margin-top: 200px;
 }
 
-footer .icons{
-    color: var(--text-color);
+.footer .icons{
     display: flex;
     flex-wrap: nowrap;
     gap: 30px;
 }
 
-.icons{
+.footer .icons .ion{
     font-size: 40px;
+    color: var(--text-color);
 }
 
-/*Computadores*/
-@media (min-width: 1024px){
+.footer .icons .ion:hover{
+    background-color: var(--bg-color-icon);
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.mode button{
+    width: 32px;
+    height: 32px;
+    background: white var(--mode-bg-url) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: 1;
+    transform: translateY(-50%);
+    animation: slide-out 0.4s;
+}
+
+.mode{
+    position: relative;
+    width: 64px;
+    margin: 0px 200px;
+    margin-bottom: 16px;
+    position: absolute;
+    transform: translateY(-2500%);
+    left: 0;
+}
+
+.light .mode button{
+    animation: slide-in 0.4s forwards;
+}
+
+.mode button:hover{
+    outline: 4px solid rgba(135, 31, 254, 0.315);
+}
+
+.mode span{
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: rgb(135, 31, 254);
+    border: 1.5px solid rgb(135, 31, 254);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 9999px;
 }
 
 /*Tablets*/
 @media (min-width: 768px) and (max-width: 1200px){
+    header{
+        display: flex;
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+        position: absolute;
+        top: 120px;
+    }
+
+    #navegar{
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+    }
+   
     .list{
         width: 130px;
     }
-    .logo{
-        position: absolute;
-        transform: translateY(100%);
-    }
+
     #inicio .frase{
-        margin-top: 150px;
+        margin-top: 100px;
+        align-content: center;
+        width: 100vw;
     }
     .frase .words{
-        position: absolute;
-        transform: translateY(60%);
         font-size: 24px;
     }
     .frase img{
         width: 600px;
     }
-    .icons{
+    .mode{
+        position: relative;
+        width: 64px;
+        margin-bottom: 16px;
         position: absolute;
-        z-index: 1;
-        transform: translateY(-120%);
+        transform: translateY(-2300%);
+        left: 20%;
     }
-
 }
 
 /*Smartphones*/
-@media (max-width: 767px) and (min-width:464px){ 
-    #menu{
-        display: block;
-        gap: 2px;
+@media (max-width: 767px) and (min-width:530px){ 
+    #navegar{
+        width: 100vw;
+        height: 100px;
+        position: fixed;
+        left: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: right;
     }
-
-    #mobile-btn{
+    #navegar #mobile-btn{
+        width: 150px;
+        height: 40px;
         display: flex;
         cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        margin: 30px 50px;
+        background-color: rgba(255, 255, 255, 0.774);
+        border: 2px solid white;
+        border-radius: 9px;
+        box-shadow: 4px 4px 4px var(--bg-menu);
+
+    }
+    #menu{
+        width: 100vw;
+        display: flex;
+        gap: 2px;
+        
+    }
+    .list{
+        visibility: hidden;
+        width: 100vw;
+        padding: 5px;
+        background-color: var(--bg-color-list);
+        border-radius: 0px;
+        border: var(--border-list);
+        text-align: center;
+        box-shadow: none;
+        position: relative;
+        z-index: 1000;
+    }
+
+    #navegar.active #mobile-btn{
+        position: absolute;
+        z-index: 1000;
+        box-shadow: 4px 4px 4px var(--box-shadow-menu);
+    }
+
+    #navegar.active #menu{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        padding-top: 100px;
+        background-color: var(--bg-header);
+        position: absolute;
+    }
+
+    #navegar.active .list{
+        visibility: visible;
+    }
+
+    .logo img{
+        width: 300px;  
+    }
+
+    #inicio .frase{
+        margin-top: 100px;
+    }
+    .frase .words{
+        position: absolute;
+        font-size: 22px;
+    }
+    .frase img{
+        width: 500px;
+        
+    }
+    .mode{
+        position: relative;
+        width: 64px;
+        margin: 0px 150px;
+        margin-bottom: 16px;
+        position: absolute;
+        transform: translateY(-2400%);
+        left: 0;
+    }
+}
+
+@media (max-width: 529px){
+    #navegar{
+        width: 100vw;
+        height: 100px;
+        position: fixed;
+        left: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: right;
+        background-color: rgb(135, 31, 254);
+    }
+    #navegar #mobile-btn{
+        width: 150px;
+        height: 40px;
+        display: flex;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        margin: 30px 50px;
+        background-color: rgba(255, 255, 255, 0.774);
+        border: 2px solid white;
+        border-radius: 9px;
+        box-shadow: 4px 4px 4px var(--bg-menu);
+        box-shadow: 4px 4px 4px var(--box-shadow-menu);
+
+    }
+    #menu{
+        width: 100vw;
+        display: flex;
+        gap: 2px;
     }
 
     .list{
@@ -186,62 +362,22 @@ footer .icons{
         z-index: 1000;
     }
 
-    #mobile-btn{
-        width: 100vw;
-        position: fixed;
-        z-index: 100;
-        top: 0;
-        height: 40px;
-        align-items: center;
+    #navegar.active #mobile-btn{
+        position: absolute;
+        z-index: 1000;
     }
 
     #navegar.active #menu{
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
+        padding-top: 100px;
+        background-color: var(--bg-header);
+        position: absolute;
     }
 
     #navegar.active .list{
         visibility: visible;
-    }
-
-    .logo{
-        position: absolute;
-        transform: translateY(100%);
-    }
-
-    #inicio .frase{
-        margin-top: 220px;
-    }
-    .frase .words{
-        position: absolute;
-        transform: translateY(80%);
-        font-size: 22px;
-    }
-    .frase img{
-        width: 500px;
-    }
-}
-
-@media (max-width: 463px){
-    #menu{
-        background-color: rgb(135, 31, 254);
-        padding: 20px;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        right: 0;  
-        /*Lembrar de transformar isso em um menu sanduiche com js*/     
-    }
-
-    .list{
-        width: 150px;
-        padding: 5px;
-        background-color: var(--bg-color-list);
-        border-radius: 9px;
-        border: var(--border-list);
-        text-align: center;
-        box-shadow: var(--box-shaadow);
     }
     .logo{
         position: absolute;
@@ -258,5 +394,22 @@ footer .icons{
     }
     .frase img{
         width: 460px;
+    }
+    .mode{
+        position: relative;
+        width: 64px;
+        margin: 0px 40px;
+        margin-bottom: 16px;
+        position: absolute;
+        transform: translateY(-2700%);
+        left: 0;
+    }
+
+    .mode span{
+        background-color: rgba(255, 255, 255, 0.774);
+    }
+
+    .mode button:hover{
+        outline: 4px solid rgba(255, 255, 255, 0.774);
     }
 }

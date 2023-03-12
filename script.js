@@ -6,3 +6,9 @@ function toggleMenu(){
 }
 
 btnMobile.addEventListener('click', toggleMenu);
+
+function toggleMode(){
+    const html = document.documentElement
+    html.classList.toggle('dark')
+    html.classList.toggle('light')
+}
