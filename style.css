@@ -44,11 +44,25 @@ body{
 }
 
 .logo img{
-    width: 400px;
+    width: 350px;
 }
 
-nav{
-    margin-top: 60px;
+#navegar{
+    margin-top: 40px;
+}
+
+#mobile-btn{
+    display: none;
+}
+
+#menu{
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+#menu a{
+    display: block;
 }
 
 .list{
@@ -67,18 +81,13 @@ nav{
     color: var(--text-color-hover);
 }
 
-ul{
-    list-style: none;
-    display: flex;
-    gap: 30px;
-}
+
 
 a{
     text-decoration: none;
 }
 
 #inicio .frase{
-    
     display: flex;
     justify-content: center;
     
@@ -89,7 +98,7 @@ a{
     color: var(--text-color);
     text-align: left;
     position: absolute;
-    transform: translateY(100%);
+    transform: translateY(60%);
     font-size: 30px;
     text-shadow: 6px 6px 5px black;
 }
@@ -100,7 +109,7 @@ a{
 
 .frase img{
     margin-top: 0px;
-    width: 800px;
+    width: 600px;
 }
 
 footer{
@@ -118,10 +127,6 @@ footer .icons{
 
 .icons{
     font-size: 40px;
-}
-#sobre{
-    width: 100vw;
-    height: 100vh;
 }
 
 /*Computadores*/
@@ -143,42 +148,70 @@ footer .icons{
     .frase .words{
         position: absolute;
         transform: translateY(60%);
-        font-size: 30px;
+        font-size: 24px;
     }
     .frase img{
-        width: 700px;
+        width: 600px;
+    }
+    .icons{
+        position: absolute;
+        z-index: 1;
+        transform: translateY(-120%);
     }
 
 }
 
 /*Smartphones*/
-@media (max-width: 767px) and (min-width:464px){
-    .navegar ul{
-        background-color: rgb(135, 31, 254);
-        padding: 20px;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        right: 0;  
-        /*Lembrar de transformar isso em um menu sanduiche com js*/     
+@media (max-width: 767px) and (min-width:464px){ 
+    #menu{
+        display: block;
+        gap: 2px;
+    }
+
+    #mobile-btn{
+        display: flex;
+        cursor: pointer;
     }
 
     .list{
-        width: 150px;
+        visibility: hidden;
+        width: 100vw;
         padding: 5px;
         background-color: var(--bg-color-list);
-        border-radius: 9px;
+        border-radius: 0px;
         border: var(--border-list);
         text-align: center;
-        box-shadow: var(--box-shaadow);
+        box-shadow: none;
+        position: relative;
+        z-index: 1000;
     }
+
+    #mobile-btn{
+        width: 100vw;
+        position: fixed;
+        z-index: 100;
+        top: 0;
+        height: 40px;
+        align-items: center;
+    }
+
+    #navegar.active #menu{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    #navegar.active .list{
+        visibility: visible;
+    }
+
     .logo{
         position: absolute;
         transform: translateY(100%);
     }
 
     #inicio .frase{
-        margin-top: 250px;
+        margin-top: 220px;
     }
     .frase .words{
         position: absolute;
@@ -191,10 +224,11 @@ footer .icons{
 }
 
 @media (max-width: 463px){
-    .navegar ul{
+    #menu{
         background-color: rgb(135, 31, 254);
         padding: 20px;
         position: fixed;
+        z-index: 1;
         top: 0;
         right: 0;  
         /*Lembrar de transformar isso em um menu sanduiche com js*/     
