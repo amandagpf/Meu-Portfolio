@@ -78,21 +78,47 @@ a{
 }
 
 #inicio .frase{
-    margin-top: 20px;
+    
+    display: flex;
+    justify-content: center;
     
 }
 
 .frase .words{
+    font-family: 'Oswald', sans-serif;
     color: var(--text-color);
-    text-align: center;
+    text-align: left;
     position: absolute;
-    border: 1px solid red;
+    transform: translateY(100%);
+    font-size: 30px;
+    text-shadow: 6px 6px 5px black;
+}
+
+.words .neg{
+    letter-spacing: 15px;
 }
 
 .frase img{
-    width: 900px;
+    margin-top: 0px;
+    width: 800px;
 }
 
+footer{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+footer .icons{
+    color: var(--text-color);
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 30px;
+}
+
+.icons{
+    font-size: 40px;
+}
 #sobre{
     width: 100vw;
     height: 100vh;
@@ -100,7 +126,6 @@ a{
 
 /*Computadores*/
 @media (min-width: 1024px){
-
 }
 
 /*Tablets*/
@@ -112,10 +137,60 @@ a{
         position: absolute;
         transform: translateY(100%);
     }
+    #inicio .frase{
+        margin-top: 150px;
+    }
+    .frase .words{
+        position: absolute;
+        transform: translateY(60%);
+        font-size: 30px;
+    }
+    .frase img{
+        width: 700px;
+    }
+
 }
 
 /*Smartphones*/
-@media (max-width: 767px){
+@media (max-width: 767px) and (min-width:464px){
+    .navegar ul{
+        background-color: rgb(135, 31, 254);
+        padding: 20px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;  
+        /*Lembrar de transformar isso em um menu sanduiche com js*/     
+    }
+
+    .list{
+        width: 150px;
+        padding: 5px;
+        background-color: var(--bg-color-list);
+        border-radius: 9px;
+        border: var(--border-list);
+        text-align: center;
+        box-shadow: var(--box-shaadow);
+    }
+    .logo{
+        position: absolute;
+        transform: translateY(100%);
+    }
+
+    #inicio .frase{
+        margin-top: 250px;
+    }
+    .frase .words{
+        position: absolute;
+        transform: translateY(80%);
+        font-size: 22px;
+    }
+    .frase img{
+        width: 500px;
+    }
+}
+
+@media (max-width: 463px){
     .navegar ul{
         background-color: rgb(135, 31, 254);
         padding: 20px;
@@ -137,5 +212,17 @@ a{
     .logo{
         position: absolute;
         transform: translateY(100%);
+    }
+    #inicio .frase{
+        margin-top: 150px;
+    }
+
+    .frase .words{
+        position: absolute;
+        transform: translateY(80%);
+        font-size: 20px;
+    }
+    .frase img{
+        width: 460px;
     }
 }
