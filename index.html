@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,12 +18,12 @@
             </div>
             <nav id="navegar">
                 <button id="mobile-btn" role="menu">Menu</button>
-                <ul id="menu">
-                    <a href=""><div class="list"><li>Home</li></div></a>
-                    <a href=""><div class="list"><li>Sobre mim</li></div></a>
-                    <a href=""><div class="list"><li>O que faço</li></div></a>
-                    <a href=""><div class="list"><li>Meu Portfólio</li></div></a>
-                </ul>
+                    <ul id="menu">
+                        <a href="#inicio"><div class="list"><li>Home</li></div></a>
+                        <a href="#sobre"><div class="list"><li>Sobre mim</li></div></a>
+                        <a href=""><div class="list"><li>O que faço</li></div></a>
+                        <a href=""><div class="list"><li>Meu Portfólio</li></div></a>
+                    </ul>
             </nav>
         </header>
 
@@ -38,22 +38,45 @@
 
         <footer class="footer">
             <div class="icons">
-                <a href=""><ion-icon class="ion" name="logo-github"></ion-icon></a>
-                <a href=""><ion-icon class="ion" name="logo-linkedin"></ion-icon></a>
-                <a href=""><ion-icon class="ion" name="logo-whatsapp"></ion-icon></a>
-                <a href=""><ion-icon class="ion" name="logo-instagram"></ion-icon></a>
-                <a href=""><ion-icon class="ion" name="logo-twitter"></ion-icon></a>
+                <a href="https://github.com/amandagpf" target="_blank"><ion-icon class="ion" name="logo-github"></ion-icon></a>
+                <a href="https://www.linkedin.com/in/amanda-pfernandes" target="_blank"><ion-icon class="ion" name="logo-linkedin"></ion-icon></a>
+                <a href="https://api.whatsapp.com/send?phone=5551992746543" target="_blank"><ion-icon class="ion" name="logo-whatsapp"></ion-icon></a>
+                <a href="https://instagram.com/programandaa?igshid=YmMyMTA2M2Y=" target="_blank"><ion-icon class="ion" name="logo-instagram"></ion-icon></a>
+                <a href="https://twitter.com/amandap4ssos?t=gQT7x-nvpEtsDez-eeKkzg&s=09" target="_blank"><ion-icon class="ion" name="logo-twitter"></ion-icon></a>
             </div>
-            <div class="mode" onclick="toggleMode()">
-                <button></button>
-                <span></span>
-            </div>
+    
         </footer>
     </section>
     
     <section id="sobre">
-        
+        <div class="principal">
+        <div class="perfil">
+            <img src="./assets/perfil.png" alt="Foto da Amanda de perfil, com óculos, blusa preta e fundo verde.">
+        </div>
+        <div id="text">
+            <h1>Olá, tudo bem?</h1>
+            <p>Sou Amanda Fernandes, Desenvolvedora WEB!
+                <br>Desde criança sou apaixonada por tecnologia, sonhava - 
+                e ainda sonho hehe - em desenvolver jogos. Tenho formação técnica em Química,
+                mas desde o início do ano passado, desejava realizar uma transição de carreira.
+                Então, saí do meu antigo emprego e abri minha própria empresa,
+                para que eu pudesse ter mais tempo e flexibilidade de horários para estudar programação.
+                Atualmente, dedico meu tempo aos meus estudos e projetos, focados no desenvolvimento WEB, 
+                trazendo acessibilidade e criatividade em minhas criações.
+            </p>
+        </div>
+        </div>
+
+        <div class="skills">
+            <img src="./assets/div.png" alt="">
+            <div class="title-skills">
+                <h2><span style="color: rgb(247, 55, 215);">div</span> <span style="color:rgb(95, 236, 95)">class</span> <span style="color:rgb(247, 55, 215)">=</span> <span style="color:yellow">"skills"</span></h2>
+            </div>
+        </div>
+
     </section>
+    
+    
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="./script.js"></script>
