@@ -253,6 +253,64 @@ width: 500px;
     font-size: 20px;
 }
 
+.diferenciais2{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(255, 255, 255);
+    height: 500px;
+    width: 46%;
+    position: absolute;
+    right: 1.4%;
+    transform: translateY(-100%);
+    border-radius: 99px;
+    border: 1px solid black;
+    box-shadow: 6px 6px 6px black;
+}
+
+.close{
+    height: 100px;
+}
+.diferenciais2 button{
+    height: 40px;
+    width: 40px;
+    font-size: 30px;
+    margin:40px;
+    border-radius: 9px;
+    background-color: #e71d27;
+}
+
+.diferenciais2 span{
+    margin-top: 52px;
+    width: 50px;
+    color: black;
+    position: absolute;
+    left: 100px;
+}
+
+.qualidades{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    transform: translateY(-8%);
+    gap: 20px;
+    color: black;
+    margin: 0px 20px;
+    justify-content: center;    
+}
+
+.qualidades1 img{
+    width: 60px;
+}
+
+.txtqualidade{
+    width: 160px;
+}
+
+.txtqualidade p{
+    text-indent: 10px;
+}
+
+
 /*Tablets*/
 @media (min-width: 768px) and (max-width: 1200px){
     header{
