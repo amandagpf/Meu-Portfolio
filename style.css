@@ -382,7 +382,7 @@ width: 500px;
         display: flex;
         gap: 2px;
         height: 0;
-        transition: .6s;
+
         visibility: hidden;
     }
 
@@ -440,6 +440,24 @@ width: 500px;
     .frase img{
         width: 500px;
         
+    }
+}
+
+@keyframes menu-in{
+    from{
+        visibility: hidden;
+    }
+    to{
+        visibility: visible;
+    }
+}
+
+@keyframes menu-on{
+    from{
+        visibility: visible;
+    }
+    to{
+        visibility: hidden;
     }
 }
 

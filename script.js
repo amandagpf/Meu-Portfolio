@@ -8,3 +8,12 @@ function toggleMenu(){
 
 btnMobile.addEventListener('click', toggleMenu);
 btnMobile.addEventListener('touchstart', toggleMenu);
+
+const meusDiferenciais = document.getElementById('meus-diferenciais');
+
+    function openDiferenciais(){
+        const open = document.getElementsByClassName('diferenciais');
+        open.classList.add('active')
+    }
+
+meusDiferenciais.addEventListener('click', openDiferenciais);
