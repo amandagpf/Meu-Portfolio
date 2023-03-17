@@ -231,6 +231,8 @@ width: 500px;
     justify-content: center;
 }
 
+
+
 .diferenciais button{
     display: flex;
     align-items: center;
@@ -265,6 +267,11 @@ width: 500px;
     border-radius: 99px;
     border: 1px solid black;
     box-shadow: 6px 6px 6px black;
+    visibility: hidden;
+}
+
+.diferenciais.active .diferenciais2{
+    visibility: visible;
 }
 
 .close{
@@ -309,7 +316,35 @@ width: 500px;
 .txtqualidade p{
     text-indent: 10px;
 }
+/*Notebooks menores*/
+@media (max-width: 1200px) and (min-width: 768px){
+    
+        #sobre{
+            display: flex;
+            flex-wrap: wrap;
+        }
+    
+        .principal{
+            display: flex;
+            width: 100vw;
+            height: 700px;
+            margin: 60px 40px;
 
+        }
+        
+        #text{
+            margin-top: 60px;
+        }
+
+        .skills{
+            background-color: black;
+            width: 100vh;
+            margin: 60px;
+        }
+        .conhecimentos img{
+            width: 130px;
+        }
+}
 
 /*Tablets*/
 @media (min-width: 768px) and (max-width: 1200px){
@@ -425,7 +460,6 @@ width: 500px;
     }
 
     
-
     .logo img{
         width: 300px;  
     }
@@ -441,7 +475,21 @@ width: 500px;
         width: 500px;
         
     }
+
+    #sobre{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .principal{
+        width: 100vw;
+    }
+
+    .skills{
+        background-color: black;
+    }
 }
+
 
 @keyframes menu-in{
     from{
