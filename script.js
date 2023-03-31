@@ -9,4 +9,9 @@ function toggleMenu(){
 btnMobile.addEventListener('click', toggleMenu);
 btnMobile.addEventListener('touchstart', toggleMenu);
 
+var diferenciais = document.getElementById('meus-diferenciais')
+diferenciais.addEventListener('click', clicar)
 
+function clicar(){
+    diferenciais.innerText = 'Clicou'
+}
